@@ -8,9 +8,9 @@ Additional abstract class code just led to a confusing mess.  However, it might 
 make paintEvent(QPaintEvent*) a pure virtual for all of the children (I have not tried this).
 
 Second, the basic structure looks powerful.  The MainWindow constructs the tool widgets and adds them 
-to the QVector. In the same, order a corresponding button which inherits QToolButton is created.  This 
-button gets the index of the tool widget.  When the button is clicked, it emits a signal which brings 
-up the corresponding tool widget.
+to the QVector. In the same, order a corresponding button which inherits QToolButton (or QPushButton) 
+is created.  This button gets the index of the tool widget.  When the button is clicked, it emits a 
+signal which brings up the corresponding tool widget.
 
 Third, the singleton repository of application data looks very good.  However, it likely would be wise 
 to do a mutex lock on all singleton set and get functions.
