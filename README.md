@@ -14,3 +14,7 @@ signal which brings up the corresponding tool widget.
 
 Third, the singleton repository of application data looks very good.  However, it likely would be wise 
 to do a mutex lock on all singleton set and get functions.
+
+The singleton instance reference, sData, is declared in abstractracer.h.  And the reference is obtained in 
+abstractracer.cpp.  This reference, then, is available to the children classes racecar, racehorse, and 
+raceplane.  There is no need for sData = SingletonData::getInstance(); in these classes.
